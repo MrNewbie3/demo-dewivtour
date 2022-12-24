@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import HomePage from "./containers/Pages/HomePages/Home";
+import "@fontsource/poppins/300.css";
+import "@fontsource/poppins/400.css";
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/700.css";
+import "@fontsource/poppins/800.css";
+import "@fontsource/poppins/900.css";
+import { Route, Routes } from "react-router-dom";
+class App extends React.Component {
+  state = {};
+  render() {
+    return (
+      <div className="font-poppins">
+        <Routes>
+          <Route exact path="/" element={<HomePage />}></Route>
+          <Route exact path="/destination" element={<HomePage />}></Route>
+          <Route exact path="/ticket" element={<HomePage />}></Route>
+          <Route exact path="/vTour" element={<HomePage />}></Route>
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;
