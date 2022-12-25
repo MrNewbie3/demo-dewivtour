@@ -1,5 +1,5 @@
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 
 export const notify = () => {
-  toast.error("This didn't work.");
+  toast.error("Oops! fitur belum tersedia");
 };

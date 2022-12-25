@@ -1,7 +1,11 @@
-import { notify } from "../../containers/Pages/Debug/Debug";
-
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import { GoogleAuth, jsonData } from "../../config/Auth/auth";
+import { notify } from "../../containers/Pages/Debug/Debug";
 function Navbar() {
+  const handleSignIn = () => {
+    return GoogleAuth();
+  };
+
   return (
     <div className="navbar ">
       <div className="navbar-start">
@@ -44,10 +48,15 @@ function Navbar() {
           </li>
         </ul>
       </div>
+
       <div className="navbar-end">
-        <a className="btn rounded-full px-8 px bg-blueButton border-none mx-24 " onClick={notify}>
-          Masuk
-        </a>
+        {localStorage.getItem("loginInfo") === null ? (
+          <a className="btn rounded-full px-8 px bg-blueButton border-none mx-24 " onClick={handleSignIn}>
+            Masuk
+          </a>
+        ) : (
+          <div className="p-4 bg-blueButton text-white font-semibold rounded-full">{jsonData.user.displayName}</div>
+        )}
       </div>
     </div>
   );
