@@ -1,9 +1,40 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { GoogleAuth, jsonData } from "../../config/Auth/auth";
+import { GoogleAuth, jsonData, signOutMethod } from "../../config/Auth/auth";
 import { notify } from "../../containers/Pages/Debug/Debug";
+import Swal from "sweetalert2";
 function Navbar() {
   const handleSignIn = () => {
     return GoogleAuth();
+  };
+  const handleLogOut = () => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-danger",
+        cancelButton: "btn btn-success",
+      },
+      buttonsStyling: true,
+    });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: "Anda ingin LogOut?",
+        text: "Anda harus login lagi untuk menggunakan vtour anda!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Ya, saya ingin logout!",
+        cancelButtonText: "Tidak, batalkan!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          signOutMethod();
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire("Dibatalkan", "Gagal Logout", "error");
+        }
+      });
   };
 
   return (
@@ -55,7 +86,9 @@ function Navbar() {
             Masuk
           </a>
         ) : (
-          <div className="p-4 bg-blueButton text-white font-semibold rounded-full">{jsonData.user.displayName}</div>
+          <div className="p-4 bg-blueButton text-white font-semibold rounded-full cursor-pointer" onClick={handleLogOut}>
+            {jsonData.user.displayName}
+          </div>
         )}
       </div>
     </div>
