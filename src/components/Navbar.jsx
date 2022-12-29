@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { GoogleAuth, jsonData, signOutMethod } from "../config/Auth/auth";
 import { notify } from "../pages/Debug/Debug";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 function Navbar() {
   const handleSignIn = () => {
@@ -9,34 +9,35 @@ function Navbar() {
   };
 
   const handleLogOut = () => {
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton: "btn btn-danger",
-        cancelButton: "btn btn-success",
-      },
-      buttonsStyling: true,
-    });
+    return signOutMethod();
+    // const swalWithBootstrapButtons = Swal.mixin({
+    //   customClass: {
+    //     confirmButton: "btn btn-danger",
+    //     cancelButton: "btn btn-success",
+    //   },
+    //   buttonsStyling: true,
+    // });
 
-    swalWithBootstrapButtons
-      .fire({
-        title: "Anda ingin LogOut?",
-        text: "Anda harus login lagi untuk menggunakan vtour anda!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Ya, saya ingin logout!",
-        cancelButtonText: "Tidak, batalkan!",
-        reverseButtons: true,
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          signOutMethod();
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire("Dibatalkan", "Gagal Logout", "error");
-        }
-      });
+    // swalWithBootstrapButtons
+    //   .fire({
+    //     title: "Anda ingin LogOut?",
+    //     text: "Anda harus login lagi untuk menggunakan vtour anda!",
+    //     icon: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonText: "Ya, saya ingin logout!",
+    //     cancelButtonText: "Tidak, batalkan!",
+    //     reverseButtons: true,
+    //   })
+    //   .then((result) => {
+    //     if (result.isConfirmed) {
+    //       signOutMethod();
+    //     } else if (
+    //       /* Read more about handling dismissals below */
+    //       result.dismiss === Swal.DismissReason.cancel
+    //     ) {
+    //       swalWithBootstrapButtons.fire("Dibatalkan", "Gagal Logout", "error");
+    //     }
+    //   });
   };
 
   return (
@@ -107,11 +108,29 @@ function Navbar() {
             Masuk
           </a>
         ) : (
-          <div
-            className="p-4 bg-blueButton text-white font-semibold rounded-full cursor-pointer"
-            onClick={handleLogOut}
-          >
-            {jsonData.user.displayName}
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img
+                  src={jsonData.user.photoURL}
+                  alt={jsonData.user.displayName}
+                />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">Dashboard</a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <button onClick={handleLogOut}>Logout</button>
+              </li>
+            </ul>
           </div>
         )}
       </div>

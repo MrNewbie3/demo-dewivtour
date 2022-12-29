@@ -8,12 +8,14 @@ import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import SignIn from "./pages/SignIn/SignIn";
 
 const App = () => {
   return (
     <div className="font-poppins">
       <Toaster />
       <Routes>
+        <Route exact path="/auth/signin" element={<SignIn />}></Route>
         <Route exact path="/" element={<HomePage />}></Route>
         <Route exact path="/destination" element={<HomePage />}></Route>
         <Route exact path="/ticket" element={<HomePage />}></Route>

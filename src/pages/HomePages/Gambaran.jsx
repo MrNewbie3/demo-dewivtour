@@ -4,14 +4,18 @@ function Gambaran() {
   return (
     <div className="mt-24 px-16 h-auto">
       <div className="title text-center">
-        <p className="text-2xl font-medium tracking-widest mb-6">Galeri Desa</p>
-        <p className="font-bold text-5xl mb-20">
+        <p className="text-xl md:text-2xl font-medium tracking-widest mb-6">
+          Galeri Desa
+        </p>
+        <p className="font-bold text-4xl md:text-5xl mb-20">
           Beberapa Gambaran Desa Wisata
         </p>
       </div>
       <div className="content flex flex-col lg:flex-row gap-x-28">
-        <div className="image w-480 h-480 bg-center  bg-triple-images bg-contain bg-no-repeat"></div>
-        <div className="description w-1/2 mr-36 flex flex-col justify-center">
+        <div className="w-3/4 md:w-1/2 mx-auto my-4">
+          <img src="/images/group_image_18.png" alt="group images" />
+        </div>
+        <div className="description flex flex-col justify-center ">
           <p className="bg-blueMain mb-3 text-blueButton px-4 py-1 rounded-full text-center text-xs w-fit font-semibold ">
             Kampung warna warni
           </p>
@@ -25,9 +29,9 @@ function Gambaran() {
             aptent taciti sociosqu ad litora torquent per conubia nostra, per
             inceptos himenaeos.{" "}
           </p>
-          <button className="text-semiOrange w-fit btn btn-ghost font-semibold rounded-full flex flex-row gap-x-2 lowercase ">
+          <button className="text-semiOrange w-fit text-sm font-semibold rounded-full flex flex-row items-center gap-x-2 lowercase ">
             <p>kunjungi desa</p>
-            <EastRoundedIcon />{" "}
+            <EastRoundedIcon />
           </button>
         </div>
       </div>
