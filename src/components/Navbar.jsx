@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { GoogleAuth, jsonData, signOutMethod } from "../../config/Auth/auth";
-import { notify } from "../../containers/Pages/Debug/Debug";
+import { GoogleAuth, jsonData, signOutMethod } from "../config/Auth/auth";
+import { notify } from "../pages/Debug/Debug";
 import Swal from "sweetalert2";
+
 function Navbar() {
   const handleSignIn = () => {
     return GoogleAuth();
   };
+
   const handleLogOut = () => {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
