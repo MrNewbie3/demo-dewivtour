@@ -11,9 +11,7 @@ export const GoogleAuth = () => {
       localStorage.setItem("loginInfo", JSON.stringify(result));
       window.location.reload();
     })
-    .catch((error) => {
-      console.log(error);
-    });
+    .catch((error) => {});
 };
 
 export const jsonData = JSON.parse(localStorage.getItem("loginInfo"));
