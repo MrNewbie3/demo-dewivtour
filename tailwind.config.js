@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/**.{html,js}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       fontFamily: {
@@ -12,7 +12,7 @@ module.exports = {
         buttonDisabled: "#F1F3F4",
         semiOrange: "#F0623E",
         cream: "#FFBE83",
-        blueMain: "#DDE4FB"
+        blueMain: "#DDE4FB",
       },
       backgroundImage: {
         "home-pattern": "url('/src/assets/title_image.png')",
@@ -34,5 +34,5 @@ module.exports = {
   daisyui: {
     themes: false,
   },
-  plugins: [require("daisyui"), { tailwindcss: {} }],
+  plugins: [require("daisyui")],
 };

@@ -1,6 +1,8 @@
-import { getAuth, GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { auth, provider } from "../Firebase/Firebase";
+
 export let image = "";
+
 export const GoogleAuth = () => {
   signInWithPopup(auth, provider)
     .then(async (result) => {
