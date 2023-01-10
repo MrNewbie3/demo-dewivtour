@@ -9,6 +9,7 @@ import "@fontsource/poppins/900.css";
 import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import SignIn from "./pages/SignIn/SignIn";
+import Destination from "./pages/Destination/Destination";
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
       <Routes>
         <Route exact path="/auth/signin" element={<SignIn />}></Route>
         <Route exact path="/" element={<HomePage />}></Route>
-        <Route exact path="/destination" element={<HomePage />}></Route>
+        <Route exact path="/destination" element={<Destination />}></Route>
         <Route exact path="/ticket" element={<HomePage />}></Route>
         <Route exact path="/vtour" element={<HomePage />}></Route>
       </Routes>

@@ -7,10 +7,12 @@ import HomeLayout from "../../layouts/HomeLayout";
 const HomePages = () => {
   return (
     <HomeLayout>
-      <Content />
-      <Tujuan />
-      <Gambaran />
-      <Gabung />
+      <div className="wrapper max-w-7xl mx-auto">
+        <Content />
+        <Tujuan />
+        <Gambaran />
+        <Gabung />
+      </div>
     </HomeLayout>
   );
 };

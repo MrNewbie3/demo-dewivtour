@@ -9,7 +9,9 @@ function Footer() {
         <div className="socmed flex flex-row gap-x-8">
           <p className="text-2xl text-white font-semibold">Hubungi Kami</p>
           <div className="logos flex flex-row gap-x-5">
-            <InstagramIcon className="text-white" sx={{ fontSize: 24 }} />
+            <a href="https://www.instagram.com/dewivtour/" target={"_blank"} rel="noreferrer">
+              <InstagramIcon className="text-white" sx={{ fontSize: 24 }} />
+            </a>
             <WhatsAppIcon className="text-white" sx={{ fontSize: 24 }} />
             <TwitterIcon className="text-white" sx={{ fontSize: 24 }} />
           </div>

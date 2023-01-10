@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
-const HomeLayout = ({ children }) => {
+const HomeLayout = ({ children }  ) => {
   return (
     <>
-      <div className="max-w-7xl mx-auto">
+      <div>
         <Navbar />
         {children}
       </div>
