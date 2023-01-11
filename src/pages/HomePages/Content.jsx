@@ -69,7 +69,7 @@ function Content() {
               to his brother.
             </p>
             <p>
-              Source:
+              Source:{" "}
               <a href="https://en.wikipedia.org/wiki/Luigi" target="_blank">
                 Wikipedia
               </a>

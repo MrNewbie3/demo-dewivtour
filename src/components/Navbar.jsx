@@ -13,8 +13,8 @@ function Navbar() {
   };
 
   return (
-    <div className="navbar max-w-7xl mx-auto">
-      <div className="navbar-start">
+    <div className="navbar max-w-7xl  mx-auto">
+      <div className="navbar-start min-h-16">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,18 +46,18 @@ function Navbar() {
           <li tabIndex={0}>
             <a href="/destination">Destinasi</a>
           </li>
-          <li onClick={notify}>
-            <a>Tiket</a>
+          <li>
+            <a href="/ticket">Tiket</a>
           </li>
-          <li onClick={notify}>
-            <a>VTour</a>
+          <li>
+            <a href="/vtour">VTour</a>
           </li>
         </ul>
       </div>
 
       <div className="navbar-end">
         {localStorage.getItem("loginInfo") === null ? (
-          <a className="btn rounded-full px-8 px bg-blueButton border-none mx-2" onClick={handleSignIn}>
+          <a className="btn rounded-full px-8 px bg-blueButton border-none mx-2" href="/auth/signin">
             Masuk
           </a>
         ) : (

@@ -1,9 +1,16 @@
+import { StyledEngineProvider } from "@mui/material/styles";
 import React from "react";
+import AvatarComp from "./Avatar";
+
+import Toggler from "./Toggle";
 
 const SignIn = () => {
   return (
     <>
-      <h1>Halaman Sign In</h1>
+      <div className="flex flex-row">
+          <Toggler />
+        <AvatarComp />
+      </div>
     </>
   );
 };

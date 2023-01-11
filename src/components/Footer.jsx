@@ -12,7 +12,9 @@ function Footer() {
             <a href="https://www.instagram.com/dewivtour/" target={"_blank"} rel="noreferrer">
               <InstagramIcon className="text-white" sx={{ fontSize: 24 }} />
             </a>
-            <WhatsAppIcon className="text-white" sx={{ fontSize: 24 }} />
+            <a href="https://wa.me/6285106655664" target={"_blank"} rel="noreferrer">
+              <WhatsAppIcon className="text-white" sx={{ fontSize: 24 }} />
+            </a>
             <TwitterIcon className="text-white" sx={{ fontSize: 24 }} />
           </div>
         </div>

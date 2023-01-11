@@ -28,6 +28,7 @@ module.exports = {
       },
       width: {
         480: "600px",
+        220: "480px",
       },
     },
   },

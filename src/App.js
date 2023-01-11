@@ -10,6 +10,8 @@ import { Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import SignIn from "./pages/SignIn/SignIn";
 import Destination from "./pages/Destination/Destination";
+import Ticket from "./pages/Ticket/Ticket";
+import Vtour from "./pages/Vtour/Vtour";
 
 const App = () => {
   return (
@@ -19,8 +21,8 @@ const App = () => {
         <Route exact path="/auth/signin" element={<SignIn />}></Route>
         <Route exact path="/" element={<HomePage />}></Route>
         <Route exact path="/destination" element={<Destination />}></Route>
-        <Route exact path="/ticket" element={<HomePage />}></Route>
-        <Route exact path="/vtour" element={<HomePage />}></Route>
+        <Route exact path="/ticket" element={<Ticket />}></Route>
+        <Route exact path="/vtour" element={<Vtour />}></Route>
       </Routes>
     </div>
   );
