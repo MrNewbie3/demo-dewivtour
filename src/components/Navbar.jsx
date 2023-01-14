@@ -1,15 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { GoogleAuth, jsonData, signOutMethod } from "../config/Auth/auth";
+import { useNavigate } from "react-router-dom";
+import { image, jsonData, signOutMethod } from "../config/Auth/auth";
 import { notify } from "../pages/Debug/Debug";
 // import Swal from "sweetalert2";
 
 function Navbar() {
-  const handleSignIn = () => {
-    return GoogleAuth();
-  };
-
+  const navigate = useNavigate();
   const handleLogOut = () => {
-    return signOutMethod();
+    signOutMethod();
+    navigate("/auth/signin");
   };
 
   return (
@@ -57,13 +56,15 @@ function Navbar() {
 
       <div className="navbar-end">
         {localStorage.getItem("loginInfo") === null ? (
-          <a className="btn rounded-full px-8 px bg-blueButton border-none mx-2" href="/auth/signin">
+          <a className="btn rounded-full px-8 px bg-blueButton border-none mx-2" onClick={handleLogOut}>
             Masuk
           </a>
         ) : (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
+              <div className="w-10 rounded-full outline outline-blueButton
+              
+              ">
                 <img src={jsonData.user.photoURL} alt={jsonData.user.displayName} />
               </div>
             </label>
