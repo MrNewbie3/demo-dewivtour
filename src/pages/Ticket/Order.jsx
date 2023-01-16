@@ -7,9 +7,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Order = () => {
-  const [location, setlocation] = useState({ lokasi: null, time: null, total: null, harga: null });
+  const [location, setlocation] = useState({ lokasi: null, time: null, total: null, harga: null, id: null });
   const [data, setData] = useState();
-  const [loadingStatus, setLoadingStatus] = useState();
   const [renderStatus, setRenderStatus] = useState(false);
   useEffect(() => {
     axios
@@ -37,8 +36,12 @@ const Order = () => {
       harga: data.map((result) => {
         if (location.lokasi === null) {
         } else if (result.name !== location.lokasi.toString() && location.lokasi.toString() !== null) {
-        }
-        return result.price;
+        } else return result.price;
+      }),
+      id: data.map((result) => {
+        if (location.lokasi === null) {
+        } else if (result.name !== location.lokasi.toString() && location.lokasi.toString() !== null) {
+        } else return result._id;
       }),
     }));
   };
@@ -89,11 +92,11 @@ const Order = () => {
 
         <div className="time flex flex-row items-center gap-x-8 my-3">
           <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
-            <AccessAlarmRounded className="text-blueButton bg-blueMain p-2 box-content  rounded-full" sx={{ fontSize: 32 }} />
+            <AccessAlarmRounded className="text-blueButton bg-blueMain p-2 box-content rounded-full" sx={{ fontSize: 32 }} />
           </div>
           <div className="text font-medium text-textDisabled text-sm sm:text-base">
             <div className="dropdown">
-              <input type="date" onClick={handleChange} onChange={handleInput} name="time" id="time" value={location.time === null ? "" : location.time} />
+              <input type="date" onClick={handleChange} onChange={handleInput} className="w-80 border-none rounded-full" name="time" id="time" value={location.time === null ? "" : location.time} />
             </div>
           </div>
         </div>
@@ -103,7 +106,18 @@ const Order = () => {
           </div>
           <div className="text font-medium text-textDisabled text-sm sm:text-base">
             <div className="dropdown">
-              <input tabIndex={0} type="number" max={20} min={0} className=" w-72 " name="total" id="total" onChange={handleInput} value={location.total === null ? "" : location.total} placeholder="Masukkan Jumlah Pengunjung" />
+              <input
+                tabIndex={0}
+                type="number"
+                max={20}
+                min={0}
+                className=" w-80 border-none rounded-full"
+                name="total"
+                id="total"
+                onChange={handleInput}
+                value={location.total === null ? "" : location.total}
+                placeholder="Masukkan Jumlah Pengunjung"
+              />
             </div>
           </div>
         </div>

@@ -27,11 +27,11 @@ function Navbar() {
             <li tabIndex={0}>
               <a href="/destination">Destinasi</a>
             </li>
-            <li onClick={notify}>
-              <a>Tiket</a>
+            <li>
+              <a href="/ticket">Tiket</a>
             </li>
-            <li onClick={notify}>
-              <a>VTour</a>
+            <li>
+              <a href="/vtour">VTour</a>
             </li>
           </ul>
         </div>
@@ -62,9 +62,11 @@ function Navbar() {
         ) : (
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full outline outline-blueButton
+              <div
+                className="w-10 rounded-full outline outline-blueButton
               
-              ">
+              "
+              >
                 <img src={jsonData.user.photoURL} alt={jsonData.user.displayName} />
               </div>
             </label>

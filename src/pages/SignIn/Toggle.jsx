@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
-import Swal from "sweetalert2";
 import { createAccount, GoogleAuth } from "../../config/Auth/auth";
 
 const Toggler = () => {
@@ -26,7 +25,6 @@ const Toggler = () => {
       ...setNewObject,
       [id]: [value],
     }));
-    console.log(registerVal.email.toString());
   };
 
   const handleRegister = () => {
