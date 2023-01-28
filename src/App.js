@@ -12,6 +12,7 @@ import SignIn from "./pages/SignIn/SignIn";
 import Destination from "./pages/Destination/Destination";
 import Ticket from "./pages/Ticket/Ticket";
 import Vtour from "./pages/Vtour/Vtour";
+import Landing from "./pages/Landing/Landing";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route exact path="/auth/signin" element={<SignIn />}></Route>
         <Route exact path="/" element={<HomePage />}></Route>
         <Route exact path="/destination" element={<Destination />}></Route>
+        <Route path="/destination/:target" element={<Landing />}></Route>
         <Route exact path="/ticket" element={<Ticket />}></Route>
         <Route exact path="/vtour" element={<Vtour />}></Route>
       </Routes>

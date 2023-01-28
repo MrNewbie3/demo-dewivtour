@@ -1,17 +1,12 @@
 import HomeLayout from "../../layouts/HomeLayout";
-import Content from "./Content";
-import Hero from "./Hero";
-import ImagesHeader from "./ImagesHeader";
-import Information from "./Information";
+import Destination_Comps from "./Destination_Comps";
+import Search_Bar from "./Search_Bar";
 
 const Destination = () => {
   return (
     <>
       <HomeLayout>
-        <ImagesHeader />
-        <Hero />
-        <Content />
-        <Information />
+        <Destination_Comps />
       </HomeLayout>
     </>
   );

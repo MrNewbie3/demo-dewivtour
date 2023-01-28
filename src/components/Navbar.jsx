@@ -1,8 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { useNavigate } from "react-router-dom";
-import { image, jsonData, signOutMethod } from "../config/Auth/auth";
-import { notify } from "../pages/Debug/Debug";
-// import Swal from "sweetalert2";
+import { jsonData, signOutMethod } from "../config/Auth/auth";
 
 function Navbar() {
   const navigate = useNavigate();

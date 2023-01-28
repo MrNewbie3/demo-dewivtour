@@ -16,17 +16,16 @@ function Content() {
       <div className="info-content my-16">
         <Tabs focusTabOnClick={false} className={"shadow-3xl rounded-3xl lg:h-96 max-w-6xl px-14 py-6  box-border mx-6 md:mx-10 lg:mx-12 xl:mx-auto"}>
           <TabList className={"flex justify-center my-3 rounded-full items-center"}>
-            <Tab selectedClassName="bg-[#3E5CB8] text-gray-50" className={"btn text-textDisabled bg-buttonDisabled hover:bg-blueButton hover:text-gray-50 border-none rounded-full px-6 font-semibold text-sm md:text-base mx-2"}>
+            <Tab selectedClassName="bg-[#3E5CB8] text-[#ffffff]" className={"btn text-textDisabled bg-buttonDisabled hover:bg-blueButton hover:text-gray-50 border-none rounded-full px-6 font-semibold text-sm md:text-base mx-2"}>
               Tiket Masuk
             </Tab>
             <Tab
-              selectedClassName="bg-[#3E5CB8] text-gray-50"
+              selectedClassName="bg-[#3E5CB8] text-[#ffffff]"
               className={"btn hover:bg-blueButton hover:text-gray-50 text-textDisabled bg-buttonDisabled active:bg-blueButton rounded-full border-none font-semibold text-sm md:text-base px-4"}
             >
               Virtual Tour
             </Tab>
           </TabList>
-
           <TabPanel className={"mt-10"}>
             <div className="text-content my-7 lg:my-0 md:flex md:flex-row md:justify-between md:items-center flex flex-col">
               <div className="location flex flex-col gap-y-2 my-3">

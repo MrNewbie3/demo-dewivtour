@@ -1,6 +1,6 @@
 {
   "name": "dewi-vtour",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -22,6 +22,7 @@
     "react-iframe": "^1.8.5",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
+    "react-search-autocomplete": "^8.3.1",
     "react-tabs": "^6.0.0",
     "sweetalert2": "^11.6.16",
     "swiper": "^8.4.5",
