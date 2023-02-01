@@ -1,13 +1,10 @@
 /* eslint-disable react/jsx-pascal-case */
+
 import List from "./List";
-import Search_Bar from "./Search_Bar";
 
 const Destination_Comps = () => {
   return (
     <div className="wrapper px-16 my-6">
-      <div className="wrapper flex flex-col mb-4">
-        <Search_Bar />
-      </div>
       <section className=" flex flex-row gap-x-14">
         <div className="sorter-maps w-fit">
           <div className="destination-dropdown bg-buttonDisabled w-56 p-4 rounded-xl">
@@ -15,20 +12,20 @@ const Destination_Comps = () => {
             <div className="select-form">
               <form className="flex flex-col gap-y-3">
                 <div className="option-wrapper flex flex-row items-center gap-x-4">
-                  <input type="radio" id="Desa Wisata" name="fav_language" value="Desa Wisata" checked />
-                  <label for="Desa Wisata">Desa Wisata</label>
+                  <input type="radio" id="Desa Wisata" name="fav_language" onChange={()=>{}} value="Desa Wisata" checked />
+                  <label htmlFor="Desa Wisata">Desa Wisata</label>
                 </div>
                 <div className="option-wrapper flex flex-row items-center gap-x-4">
-                  <input type="radio" id="RM" name="fav_language" value="Rumah Makan" />
-                  <label for="RM">Rumah Makan</label>
+                  <input type="radio" id="RM" name="fav_language" onChange={()=>{}} value="Rumah Makan" />
+                  <label htmlFor="RM">Rumah Makan</label>
                 </div>
                 <div className="option-wrapper flex flex-row items-center gap-x-4">
-                  <input type="radio" id="Situs" name="fav_language" value="Situs" />
-                  <label for="Situs">Situs</label>
+                  <input type="radio" id="Situs" name="fav_language" onChange={()=>{}} value="Situs" />
+                  <label htmlFor="Situs">Situs</label>
                 </div>
                 <div className="option-wrapper flex flex-row items-center gap-x-4">
-                  <input type="radio" id="Museum" name="fav_language" value="Museum" />
-                  <label for="Museum">Museum</label>
+                  <input type="radio" id="Museum" name="fav_language" onChange={()=>{}} value="Museum" />
+                  <label htmlFor="Museum">Museum</label>
                 </div>
               </form>
             </div>

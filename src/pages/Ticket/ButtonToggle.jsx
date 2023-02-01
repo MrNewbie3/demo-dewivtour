@@ -21,8 +21,9 @@ const Selector = () => {
             <Summary className="" />
           </div>
         </TabPanel>
-        <TabPanel className={"w-full px-32 my-8 justify-center flex"}>
-          <Virtual />
+        <TabPanel className={"flex flex-row"}>
+          <Order />
+          <Summary className="" />
         </TabPanel>
       </Tabs>
     </div>

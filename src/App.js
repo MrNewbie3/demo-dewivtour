@@ -13,6 +13,7 @@ import Destination from "./pages/Destination/Destination";
 import Ticket from "./pages/Ticket/Ticket";
 import Vtour from "./pages/Vtour/Vtour";
 import Landing from "./pages/Landing/Landing";
+import DataPesanan from "./pages/DataPemesanan/Data_Pemesanan";
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/destination/:target" element={<Landing />}></Route>
         <Route exact path="/ticket" element={<Ticket />}></Route>
         <Route exact path="/vtour" element={<Vtour />}></Route>
+        <Route path="/destination/:target/data_pesan" element={<DataPesanan />}></Route>
       </Routes>
     </div>
   );

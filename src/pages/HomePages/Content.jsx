@@ -58,7 +58,9 @@ function Content() {
               </div>
             </div>
             <div className="bottom-button flex justify-center sm:justify-end mt-24 ">
-              <button className="btn text-textDisabled btn-disabled bg-buttonDisabled rounded-full border-none font-semibold text-base">Pesan Sekarang</button>
+              <button disabled className="btn rounded-full border-none font-semibold text-base">
+                Pesan Sekarang
+              </button>
             </div>
           </TabPanel>
           <TabPanel>

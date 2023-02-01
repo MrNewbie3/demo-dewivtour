@@ -1,4 +1,9 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import Desc_Prices from "./Desc_Prices";
+import FAQ from "./FAQ";
+import Location from "./Location";
+import Review from "./Review";
+import Travel from "./Travel";
 
 const Information = () => {
   return (
@@ -20,25 +25,20 @@ const Information = () => {
             </Tab>
           </TabList>
           <TabPanel>
-            <div className="wrapper">
-              <div className="badge text-xs font-semibold bg-blueMain text-blueButton border-none">Desa Wisata</div>
-              <section className="content">
-                <div className="title">
-                  <h1 className="font-bold text-3xl">Kampung Warna Warni</h1>
-                </div>
-                <div className="location"></div>
-                <div className="abouts"></div>
-              </section>
-            </div>
+            <Desc_Prices />
+            <Travel />
+            <Review />
+            <Location />
+            <FAQ />
           </TabPanel>
           <TabPanel>
-            <h1>Hellow</h1>
+            <Review />
           </TabPanel>
           <TabPanel>
-            <h1>Hellowwww</h1>
+            <Location />
           </TabPanel>
           <TabPanel>
-            <h1>Hellowwwwwwwwww</h1>
+            <FAQ />
           </TabPanel>
         </Tabs>
       </div>
