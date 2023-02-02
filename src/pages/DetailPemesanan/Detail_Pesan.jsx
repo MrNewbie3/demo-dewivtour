@@ -2,11 +2,13 @@ import { Breadcrumbs, Stepper, Step, StepLabel } from "@mui/material";
 import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-import Form from "./Form_Copm";
 import { styled } from "@mui/material/styles";
 import Check from "@mui/icons-material/Check";
 import StepConnector, { stepConnectorClasses } from "@mui/material/StepConnector";
 import TrendingFlatRoundedIcon from "@mui/icons-material/TrendingFlatRounded";
+import Form from "../DataPemesanan/Form_Copm";
+import OrderDetails from "./Order";
+import Total from "../../components/ui/Total";
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 10,
@@ -61,7 +63,7 @@ function QontoStepIcon(props) {
   );
 }
 
-const DataPesanan = () => {
+const DetailPesan = () => {
   const { target } = useParams();
   const clock = ["13.00", "", "2.30"];
   const destination = ["GMR", , "MLG"];
@@ -70,7 +72,7 @@ const DataPesanan = () => {
     <Fragment>
       <Navbar />
       <div className="content mx-32 px-6">
-        <section className="breadcrumbs mt-8 mb-16">
+        <section className="breadcrumbs mt-9 mb-16">
           <Breadcrumbs separator="›" aria-label="breadcrumb" sx={{ fontFamily: "Poppins" }}>
             <Link to={"/destination"} className="font-medium">
               Destinasi
@@ -78,33 +80,49 @@ const DataPesanan = () => {
             <Link to={`/destination/${target}`} className="font-medium ">
               {target}
             </Link>
-            <Link to={`/destination/${target}/data_pesan`} className="font-semibold text-black">
+            <Link to={`/destination/${target}/data_pesan`} className="font-medium   ">
               Data Pemesanan
+            </Link>
+            <Link to={`/destination/${target}/data_pesan/detail`} className="font-semibold text-black">
+              Detail
             </Link>
           </Breadcrumbs>
         </section>
-        <div className="wrapper  flex flex-row gap-x-28">
-          <section className="content w-1/2">
-            <div className="card w-full  shadow-xl">
+        <div className="wrapper mt-5 flex flex-row gap-x-28">
+          <section className="content w-1/2 flex flex-col gap-y-8">
+            <div className="card w-full shadow-3xl">
               <div className="card-body">
                 <h1 className="card-title">Data Pemesanan</h1>
                 <p className="text-sm text-textDisabled font-medium">Isi data dan nikmati perjalanannya</p>
                 <div className="card-actions">
                   <form action="" className="w-full">
-                    <Form title="Nama Lengkap" type="text" placeholder="cth: Budi Santoso" value={""} onChange={""} />
-                    <Form title="Jumlah Orang" type="number" placeholder="cth: 1" value={""} onChange={""} />
-                    <Form title="Tanggal Berangkat" type="date" placeholder="DD/MM/YYYY" value={""} onChange={""} />
-                    <Form title="Titik Jemput" type="text" placeholder="cth: Stasiun Malang Gedung Lama" alt="(penjemputan hanya di dalam kota)" value={""} onChange={""} />
+                    <OrderDetails title="Nama Lengkap" value={"Frederich John"} />
+                    <OrderDetails title="Jumlah Orang" value={"2"} />
+                    <OrderDetails title="Tanggal Berangkat" value={"03/02/2023"} />
+                    <OrderDetails title="Titik Jemput" value={"Stasiun Kepanjen"} />
                   </form>
                 </div>
               </div>
             </div>
+            <div className="card w-full shadow-3xl p-2">
+              <div className="card-body w-full">
+                <h1 className="card-title">Total Pembayaran</h1>
+                <p className="text-sm text-textDisabled font-medium">Nominal Dibawah sudah termasuk pajak dll</p>
+                <div className="card-value flex flex-col mt-5">
+                  <Total keys="Tiket Travel" value="Rp. 220.000,-" />
+                  <Total keys="Guide Tour" value="Rp. 60.000,-" />
+                  <Total keys="Tiket Masuk" value="Rp. 20.000,-" />
+                  <div className="divider "></div>
+                  <Total keys="TOTAL" value="Rp. 300.000,-" bold />
+                </div>
+              </div>
+            </div>
             <div className="submit w-full flex justify-end">
-              <button className="btn rounded-full font-normal px-8 my-10 bg-blueButton border-none">Lanjutkan</button>
+              <button className="btn rounded-full font-normal px-8 my-10 bg-blueButton border-none">Bayar Sekarang</button>
             </div>
           </section>
           <section className="">
-            <div className="container-travel flex flex-col w-full mt-5 items-start  shadow-xl rounded-3xl p-6">
+            <div className="container-travel flex flex-col w-full  items-start  shadow-3xl rounded-3xl p-6">
               <div className="breadcrumbs">
                 <Breadcrumbs separator={<TrendingFlatRoundedIcon />} aria-label="breadcrumb">
                   <Link underline="hover" className="font-poppins font-semibold ">
@@ -154,18 +172,4 @@ const DataPesanan = () => {
   );
 };
 
-export default DataPesanan;
-
-const value = {
-  clientInterface: "desktop",
-  data: {
-    currency: "IDR",
-    departureDate: { day: 5, month: 2, year: 2023 },
-    destination: "ML",
-    numOfAdult: 1,
-    numOfInfant: 0,
-    origin: "GMR",
-    providerType: "KAI",
-    returnDate: null,
-  },
-};
+export default DetailPesan;
