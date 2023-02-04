@@ -22,7 +22,7 @@ const Payment = () => {
             <p className="mb-10">Silahkan beli tiket terlebih dahulu </p>
             <div className="card-actions justify-end">
               <a href="/ticket">
-                <button className="btn bg-blueButton border-none">Lihat token</button>
+                <button className="btn bg-blueButton border-none">Beli tiket</button>
               </a>
             </div>
           </div>
