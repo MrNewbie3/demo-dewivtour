@@ -3,15 +3,15 @@ import SummaryComps from "../../components/ui/Summary";
 import Axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import Swal from "sweetalert2";
 const Summary = () => {
   const calulation = JSON.parse(localStorage.getItem("Order Information"));
   const id = JSON.parse(localStorage.getItem("loginInfo"));
   const prices = calulation === null ? " " : calulation.harga.find((element) => element != null);
   const UID = calulation === null ? " " : calulation.id.find((element) => element != null);
   const [isLoading, setLoading] = useState(false);
-
+  const user = localStorage.getItem("loginInfo");
   const postData = () => {
-    console.log(prices);
     setLoading(true);
     Axios.post("https://api-dewi-vtour.vercel.app/api/order/charge", {
       name: id.user.displayName === null ? id.user.email : id.user.displayName,
@@ -21,7 +21,12 @@ const Summary = () => {
       tour: UID,
     })
       .then((result) => {
-        console.log(result);
+        localStorage.removeItem("Order Information");
+        localStorage.setItem("transactionData", JSON.stringify(result.data.data));
+        Swal.fire({
+          icon: "success",
+          title: "Berhasil memesan!",
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -33,7 +38,7 @@ const Summary = () => {
   return calulation === null ? (
     <div className="wrapper my-10  w-full "></div>
   ) : (
-    <div className={"wrapper my-14  w-full "}>
+    <div className={"wrapper my-14 flex justify-center  w-full "}>
       <div className="text flex flex-col gap-y-3 w-220">
         <div className="wrapper flex flex-col gap-y-3">
           <SummaryComps title="Lokasi" value={calulation.lokasi} />
@@ -46,7 +51,7 @@ const Summary = () => {
         <div className="button self-end my-14">
           {!isLoading ? (
             <button className="btn rounded-full px-8 px bg-blueButton border-none mx-2" onClick={postData}>
-              Bayar Sekarang
+              Pesan Sekarang
             </button>
           ) : (
             <button

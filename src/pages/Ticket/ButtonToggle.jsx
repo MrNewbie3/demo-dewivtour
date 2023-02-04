@@ -1,6 +1,7 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import Virtual from "../Vtour/Virtual";
 import Order from "./Order";
+import Payment from "./Payment";
 import Summary from "./Summary";
 
 const Selector = () => {
@@ -12,18 +13,17 @@ const Selector = () => {
             Tiket Masuk
           </Tab>
           <Tab selectedClassName="bg-[#3E5CB8] text-gray-50" className={"btn hover:bg-blueButton hover:text-gray-50 text-textDisabled bg-buttonDisabled active:bg-blueButton rounded-full border-none font-semibold text-sm md:text-base px-4"}>
-            Virtual Tour
+            Pembayaran
           </Tab>
         </TabList>
         <TabPanel>
-          <div className="flex flex-row">
+          <div className="flex flex-col items-center lg:flex-row">
             <Order />
-            <Summary className="" />
+            <Summary />
           </div>
         </TabPanel>
-        <TabPanel className={"flex flex-row"}>
-          <Order />
-          <Summary className="" />
+        <TabPanel className={"flex flex-col items-center lg:flex-row"}>
+          <Payment />
         </TabPanel>
       </Tabs>
     </div>

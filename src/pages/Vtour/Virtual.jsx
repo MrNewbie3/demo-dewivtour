@@ -1,8 +1,8 @@
 import Iframe from "react-iframe";
-const Virtual = () => {
+const Virtual = (props) => {
   return (
-    <div className="wrapper w-full">
-      <Iframe url="https://ciboox-id.github.io/keramik-dinoyo/" height="450px" id="" className="w-full rounded-xl" display="block" position="relative" />
+    <div className="wrapper w-full bg-blueButton rounded-xl flex items-center justify-center">
+      {props.url === "" ? <img src={require("../../assets/logo_vtour.png")} alt="" className="scale-50" /> : <Iframe url={props.url} height="450px" id="" className="w-full rounded-xl" display="block" position="relative" />}
     </div>
   );
 };
