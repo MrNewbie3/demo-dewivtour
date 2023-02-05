@@ -8,7 +8,7 @@ function Content() {
     <>
       <div className="title my-12 text-center text-3xl md:text-5xl font-bold capitalize mx-5">
         <p className="">tengok budaya sekitar dengan</p>
-        <p className="text-blueButton mt-3 md:mt-7">Dewi Vtour</p>
+        <p className="text-blueButton mt-3 md:mt-7">Dewi VR</p>
       </div>
       <div className="image mx-8">
         <img src="/images/title_image.png" alt="Homepattern" className="my-10 rounded-full w-full h-40 md:h-full" />
@@ -27,32 +27,31 @@ function Content() {
             </Tab>
           </TabList>
           <TabPanel className={"mt-10"}>
-            <div className="text-content my-7 lg:my-0 md:flex md:flex-row md:justify-between md:items-center flex flex-col">
-              <div className="location flex flex-col gap-y-2 my-3">
+            <div className="text-content my-7 lg:my-0 flex md:flex-row justify-between md:items-center flex-col">
+              <div className="location w-full flex flex-col gap-y-2 my-3">
                 <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
-                  <PlaceOutlinedIcon className="text-blueButton" sx={{ fontSize: 32 }} />
+                  <PlaceOutlinedIcon className="text-blueButton bg-blueMain rounded-full p-2 box-content" sx={{ fontSize: 32 }} />
                   <p>Lokasi</p>
                 </div>
-                <div className="text font-medium text-textDisabled text-sm sm:text-base">
+                <div className="text font-medium text-textDisabled text-sm sm:text-base lg:block hidden">
                   <p>Pilih Lokasi Yang dikunjungi</p>
                 </div>
               </div>
-
-              <div className="people flex flex-col gap-y-2 my-3">
+              <div className="people flex w-full flex-col gap-y-2 my-3">
                 <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
-                  <PersonOutlineRoundedIcon className="text-blueButton" sx={{ fontSize: 32 }} />
+                  <PersonOutlineRoundedIcon className="text-blueButton bg-blueMain rounded-full p-2 box-content" sx={{ fontSize: 32 }} />
                   <p>Jumlah Pengunjung </p>
                 </div>
-                <div className="text font-medium text-textDisabled text-sm sm:text-base">
+                <div className="text font-medium text-textDisabled text-sm sm:text-base lg:block hidden">
                   <p>Masukkan Jumlah Pengunjung</p>
                 </div>
               </div>
-              <div className="time flex flex-col gap-y-2 my-3">
+              <div className="time flex flex-col w-full gap-y-2 my-3">
                 <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
-                  <AccessAlarmRounded className="text-blueButton" sx={{ fontSize: 32 }} />
+                  <AccessAlarmRounded className="text-blueButton bg-blueMain rounded-full p-2 box-content" sx={{ fontSize: 32 }} />
                   <p>Waktu Berkunjung</p>
                 </div>
-                <div className="text font-medium text-textDisabled text-sm sm:text-base">
+                <div className="text font-medium text-textDisabled text-sm sm:text-base lg:block hidden">
                   <p>Tentukan Waktu Kedatangan</p>
                 </div>
               </div>
@@ -64,17 +63,7 @@ function Content() {
             </div>
           </TabPanel>
           <TabPanel>
-            <p>
-              <b>Luigi</b> (<i>Japanese: ルイージ Hepburn: Ruīji, [ɾɯ.iː.dʑi̥]</i>) (<i>English: /luˈiːdʒi/; Italian: [luˈiːdʒi]</i>) is a fictional character featured in video games and related media released by Nintendo. Created by
-              prominent game designer Shigeru Miyamoto, Luigi is portrayed as the slightly younger but taller fraternal twin brother of Nintendo's mascot Mario, and appears in many games throughout the Mario franchise, often as a sidekick
-              to his brother.
-            </p>
-            <p>
-              Source:{" "}
-              <a href="https://en.wikipedia.org/wiki/Luigi" target="_blank">
-                Wikipedia
-              </a>
-            </p>
+            <h1>Under Maintain</h1>
           </TabPanel>
         </Tabs>
       </div>

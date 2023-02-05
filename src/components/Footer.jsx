@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="w-full bg-blueButton">
       <div className="px-16 pt-6 pb-4 max-w-7xl mx-auto h-fit ">
-        <div className="socmed flex flex-row gap-x-8">
+        <div className="socmed flex flex-col gap-y-8 md:flex-row gap-x-8">
           <p className="text-2xl text-white font-semibold">Hubungi Kami</p>
           <div className="logos flex flex-row gap-x-5">
             <a href="https://www.instagram.com/dewivtour/" target={"_blank"} rel="noreferrer">
@@ -18,7 +18,7 @@ function Footer() {
             <TwitterIcon className="text-white" sx={{ fontSize: 24 }} />
           </div>
         </div>
-        <div className="wrapper flex flex-row justify-between items-end w-full  ">
+        <div className="wrapper flex flex-col md:flex-row md:justify-between items-center md:items-end w-full  ">
           <div className="credits flex flex-row mt-11 gap-x-7 text-sm font-semibold text-white">
             <p>Kebijakan Privasi</p>
             <p>Dukungan</p>

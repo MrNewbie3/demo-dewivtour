@@ -38,7 +38,7 @@ const Summary = () => {
   return calulation === null ? (
     <div className="wrapper my-10  w-full "></div>
   ) : (
-    <div className={"wrapper my-14 flex justify-center  w-full "}>
+    <div className={"wrapper my-14 flex justify-center px-2 md:px-0  w-full "}>
       <div className="text flex flex-col gap-y-3 w-220">
         <div className="wrapper flex flex-col gap-y-3">
           <SummaryComps title="Lokasi" value={calulation.lokasi} />

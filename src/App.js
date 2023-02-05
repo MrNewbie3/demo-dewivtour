@@ -21,12 +21,12 @@ const App = () => {
     <div className="font-poppins">
       <Toaster />
       <Routes>
-        <Route exact path="/auth/signin" element={<SignIn />}></Route>
         <Route exact path="/" element={<HomePage />}></Route>
-        <Route exact path="/destination" element={<Destination />}></Route>
-        <Route path="/destination/:target" element={<Landing />}></Route>
+        <Route exact path="/auth/signin" element={<SignIn />}></Route>
         <Route exact path="/ticket" element={<Ticket />}></Route>
         <Route exact path="/vtour" element={<Vtour />}></Route>
+        <Route exact path="/destination" element={<Destination />}></Route>
+        <Route path="/destination/:target" element={<Landing />}></Route>
         <Route path="/destination/:target/data_pesan" element={<DataPesanan />}></Route>
         <Route path="/destination/:target/data_pesan/detail" element={<DetailPesan />}></Route>
       </Routes>

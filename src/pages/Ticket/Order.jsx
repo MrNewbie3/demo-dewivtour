@@ -65,7 +65,7 @@ const Order = () => {
     <div className="w-full flex justify-center">
       <div className="text-content my-9 mb-14 gap-y-6 flex flex-col w-fit ">
         <div className="location flex flex-row items-center gap-x-8 my-3">
-          <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
+          <div className="hidden md:block">
             <PlaceOutlinedIcon className="text-blueButton bg-blueMain p-2 box-content rounded-full" sx={{ fontSize: 32 }} />
           </div>
           <div className="text font-medium text-textDisabled text-sm sm:text-base">
@@ -91,7 +91,7 @@ const Order = () => {
         </div>
 
         <div className="time flex flex-row items-center gap-x-8 my-3">
-          <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
+          <div className="hidden md:block">
             <AccessAlarmRounded className="text-blueButton bg-blueMain p-2 box-content rounded-full" sx={{ fontSize: 32 }} />
           </div>
           <div className="text font-medium text-textDisabled text-sm sm:text-base">
@@ -101,7 +101,7 @@ const Order = () => {
           </div>
         </div>
         <div className="people flex flex-row items-center gap-x-8 my-3">
-          <div className="title flex flex-row gap-x-4 font-semibold text-lg md:text-xl items-center">
+          <div className="hidden md:block">
             <PersonOutlineRoundedIcon className="text-blueButton  bg-blueMain p-2 box-content rounded-full" sx={{ fontSize: 32 }} />
           </div>
           <div className="text font-medium text-textDisabled text-sm sm:text-base">

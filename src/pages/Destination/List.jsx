@@ -44,8 +44,8 @@ const List = () => {
 
   return (
     <Fragment>
-      <div className="wrapper flex flex-row mb-4 justify-between">
-        <select onChange={handleSort} className="select w-full max-w-xs rounded-full bg-buttonDisabled focus:border-none focus:ring-0 ">
+      <div className="wrapper w-full flex flex-row mb-4 justify-between">
+        <select onChange={handleSort} className="select w-full hidden md:block max-w-xs rounded-full bg-buttonDisabled focus:border-none focus:ring-0 ">
           <option disabled selected>
             Sortir berdasarkan
           </option>
@@ -64,26 +64,26 @@ const List = () => {
             list.map((key) => {
               return (
                 <li key={key.id}>
-                  <div id={key.id} className="ticket px-6 py-4 shadow-lg  flex flex-row rounded-xl gap-x-5">
+                  <div id={key.id} className="ticket px-6 py-4 shadow-lg  flex flex-col md:flex-row rounded-xl gap-x-5">
                     <div className="thumbnail">
                       <figure>
-                        <img src={key.image} alt="kampung warna warni" className="rounded-xl w-52 h-56" />
+                        <img src={key.image} alt="kampung warna warni" className="bg-zinc-200 text-center rounded-xl w-52 h-56" />
                       </figure>
                     </div>
                     <div className="Desc flex flex-col w-3/4">
-                      <div className="title font-bold text-2xl ">{key.name}</div>
-                      <div className="location flex flex-row items-center mt-3 mb-5 gap-x-3">
+                      <div className="title font-bold  md:text-2xl ">{key.name}</div>
+                      <div className="location md:flex flex-row  hidden items-center mt-3 mb-5 gap-x-3">
                         <div className="icons bg-red-200 p-1 rounded-full text-red-600">
                           <PlaceOutlinedIcon />
                         </div>
-                        <div className="loc text-textDisabled">{key.location}</div>
+                        <div className="location text-textDisabled">{key.location}</div>
                       </div>
-                      <div className="about text-textDisabled">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime unde explicabo vero architecto eligendi, labore quaerat possimus quod magnam! Quia.</div>
+                      <div className="about hidden md:block text-textDisabled">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime unde explicabo vero architecto eligendi, labore quaerat possimus quod magnam! Quia.</div>
                     </div>
-                    <div className="prices flex flex-col w-1/6 justify-end gap-y-4">
+                    <div className="prices flex md:flex-col flex-row md:w-1/6 w-full flex-wrap md:justify-end gap-y-4">
                       <div className="prices">
                         <div className="title text-xs font-medium ">Tiket Masuk</div>
-                        <div className="prices text-xl font-bold text-semiOrange">Rp. {key.price.toLocaleString()},-</div>
+                        <div className="prices text-md lg:text-xl font-bold text-semiOrange">Rp. {key.price.toLocaleString()},-</div>
                       </div>
                       <div className="packages">
                         <div className="pack text-xs font-medium">Include Travel</div>

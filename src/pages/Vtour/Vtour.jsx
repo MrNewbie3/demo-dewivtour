@@ -28,7 +28,7 @@ const Vtour = () => {
   };
   return (
     <HomeLayout>
-      <div className="px-16 flex flex-row gap-x-5  my-8 ">
+      <div className="px-16 flex flex-col lg:flex-row gap-x-5 gap-y-5  my-8 ">
         <Token onChange={handleChange} value={token} onClick={handlClick} loading={loading} />
         <Virtual url={vtour} />
       </div>
