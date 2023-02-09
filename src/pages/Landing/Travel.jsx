@@ -4,6 +4,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Check from "@mui/icons-material/Check";
 import StepConnector, { stepConnectorClasses } from "@mui/material/StepConnector";
+import { Link, useParams } from "react-router-dom";
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -63,6 +64,7 @@ const Travel = () => {
   const clock = ["13.00", "", "2.30"];
   const destination = ["GMR", , "MLG"];
   const index = [1, 2, 3];
+  const { target } = useParams();
   return (
     <section className="parent ">
       <div className="title mt-16">
@@ -100,7 +102,9 @@ const Travel = () => {
                   <span className="text-semiOrange font-bold text-lg">Rp. 1.800.000,-</span>/org
                 </p>
                 <div className="order">
-                  <button className="btn bg-semiOrange border-none rounded-full w-full mt-4">Pilih</button>
+                  <Link to={`/destination/${target}/data_pesan`}>
+                    <button className="btn bg-semiOrange border-none rounded-full w-full mt-4">Pilih</button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -8,6 +8,7 @@ const Vtour = () => {
   const [vtour, setVtour] = useState(localStorage.getItem("Vtour") === null ? "" : JSON.parse(localStorage.getItem("Vtour")).vtour);
   const [token, setToken] = useState();
   const [loading, setLoading] = useState(false);
+  console.log(vtour);
   const handleChange = (e) => {
     const { value } = e.target;
     setToken(value);

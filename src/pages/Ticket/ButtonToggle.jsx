@@ -22,7 +22,7 @@ const Selector = () => {
             <Summary />
           </div>
         </TabPanel>
-        <TabPanel className={"flex flex-col items-center lg:flex-row"}>
+        <TabPanel className={"flex flex-col justify-center items-center lg:flex-row"}>
           <Payment />
         </TabPanel>
       </Tabs>

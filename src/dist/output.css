@@ -3842,6 +3842,10 @@ input:checked + .toggle-bg {
   z-index: 20;
 }
 
+.z-40 {
+  z-index: 40;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -5303,6 +5307,11 @@ input:checked + .toggle-bg {
 .bg-zinc-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(228 228 231 / var(--tw-bg-opacity));
+}
+
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {

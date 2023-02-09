@@ -100,7 +100,9 @@ const DataPesanan = () => {
               </div>
             </div>
             <div className="submit w-full flex justify-end">
-              <button className="btn rounded-full font-normal px-8 my-10 bg-blueButton border-none">Lanjutkan</button>
+              <Link to={`/destination/${target}/data_pesan/detail`}>
+                <button className="btn rounded-full font-normal px-8 my-10 bg-blueButton border-none">Lanjutkan</button>
+              </Link>
             </div>
           </section>
           <section className="">
@@ -155,17 +157,3 @@ const DataPesanan = () => {
 };
 
 export default DataPesanan;
-
-const value = {
-  clientInterface: "desktop",
-  data: {
-    currency: "IDR",
-    departureDate: { day: 5, month: 2, year: 2023 },
-    destination: "ML",
-    numOfAdult: 1,
-    numOfInfant: 0,
-    origin: "GMR",
-    providerType: "KAI",
-    returnDate: null,
-  },
-};

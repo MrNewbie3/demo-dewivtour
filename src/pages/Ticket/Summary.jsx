@@ -22,7 +22,6 @@ const Summary = () => {
     })
       .then((result) => {
         localStorage.removeItem("Order Information");
-        localStorage.setItem("transactionData", JSON.stringify(result.data.data));
         Swal.fire({
           icon: "success",
           title: "Berhasil memesan!",
