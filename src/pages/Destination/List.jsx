@@ -93,7 +93,7 @@ const List = () => {
                         <Link to={key.name}>
                           <button className="btn btn-primary rounded-full w-full">Kunjungi</button>
                         </Link>
-                      </div>
+                      </div>k
                     </div>
                   </div>
                 </li>
