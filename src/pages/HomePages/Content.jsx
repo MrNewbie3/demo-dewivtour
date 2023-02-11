@@ -8,10 +8,10 @@ function Content() {
     <>
       <div className="title my-12 text-center text-3xl md:text-5xl font-bold capitalize mx-5">
         <p className="">tengok budaya sekitar dengan</p>
-        <p className="text-blueButton mt-3 md:mt-7">Dewi VR</p>
+        <p className="text-blueButton mt-3 md:mt-7">VRagio</p>
       </div>
-      <div className="image mx-8">
-        <img src="/images/title_image.png" alt="Homepattern" className="my-10 rounded-full w-full h-40 md:h-full" />
+      <div className="image mx-8 ">
+        <img src={require("../../assets/beranda_hero.jpg")} alt="Homepattern" className="my-10 rounded-full w-full h-20 md:h-96 object-cover" />
       </div>
       <div className="info-content my-16">
         <Tabs focusTabOnClick={false} className={"shadow-3xl rounded-3xl lg:h-96 max-w-6xl px-14 py-6  box-border mx-6 md:mx-10 lg:mx-12 xl:mx-auto"}>

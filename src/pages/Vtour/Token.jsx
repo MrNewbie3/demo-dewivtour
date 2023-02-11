@@ -5,7 +5,7 @@ const Token = (props) => {
       <input type="text" className=" w-full border-2 mb-6 border-white rounded-full outline-none bg-transparent px-5 py-2 text-white placeholder-white " placeholder="e.g. hjb342jncd" value={props.value} onChange={props.onChange} />
       {!props.loading ? (
         <button className="btn mb-7 w-full font-semibold rounded-full px-8 px bg-white text-blueButton border-none mx-2" onClick={props.onClick}>
-          Mulai Vtour
+          Mulai Virtual Tour
         </button>
       ) : (
         <button

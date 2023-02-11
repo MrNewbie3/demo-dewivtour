@@ -24,7 +24,7 @@ function Footer() {
             <p>Dukungan</p>
           </div>
           <div className="copyright text-white font-medium text-sm">
-            <p>&#169;dewivtour.{new Date().getFullYear()}</p>
+            <p>&#169;vragio.{new Date().getFullYear()}</p>
           </div>
         </div>
       </div>

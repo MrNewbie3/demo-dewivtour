@@ -33,7 +33,9 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl font-semibold ">Dewi VR</a>
+        <a className="btn btn-ghost normal-case text-xl font-semibold ">
+          <img src={require("../assets/VRAGIO_Logo With Text.png")} alt="" className="w-20" />
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

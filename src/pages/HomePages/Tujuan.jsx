@@ -14,8 +14,8 @@ function Tujuan() {
           <TextComp number={"3"} color={"bg-cream"} title={"Menambah Pemasukan Desa"} info={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."} />
         </div>
         <div className="img-content relative h-480 w-1/2 mx-auto my-10 md:my-0">
-          <img src="/images/village_images.png" alt="villages images" className="front-image rounded-full h-96 w-48 absolute bottom-0" />
-          <img src="/images/village_images2.png" alt="villages images2" className="bigger-image rounded-full h-480 w-72 absolute -z-10 bottom-0 left-20" />
+          <img src={require("../../assets/thumbs_1.jpg")} alt="villages images" className="front-image rounded-full h-96 w-48 absolute bottom-0 object-cover" />
+          <img src={require("../../assets/thumbs_2.jpg")} alt="villages images2" className="bigger-image rounded-full h-480 w-72 absolute -z-10 bottom-0 left-20 object-cover" />
         </div>
       </div>
     </div>
