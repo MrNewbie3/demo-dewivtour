@@ -33,6 +33,7 @@ const Payment = () => {
   const postData = async (order_id, data_id) => {
     setLoading(true);
     const data = await axios.get(`https://api-dewi-vtour.vercel.app/api/order/status/${order_id}`);
+    console.log(data.data);
     const token = await axios.get(`https://api-dewi-vtour.vercel.app/api/order/token/${data_id}`);
     data.data.status.transaction_status === "settlement"
       ? Swal.fire({

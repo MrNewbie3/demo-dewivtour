@@ -18,7 +18,7 @@ const Summary = () => {
       email: id.user.email,
       amount: prices,
       people: calulation.total.toString(),
-      tour: UID,
+      tour: UID, 
     })
       .then((result) => {
         localStorage.removeItem("Order Information");
