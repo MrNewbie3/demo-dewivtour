@@ -1,25 +1,24 @@
 const Gallery = () => {
+  const images = ["Gallery_Hero.png", "Gallery_0.png", "Gallery_1.png", "Gallery_2.png", "Gallery_3.png"];
   return (
     <section className="flex flex-row gap-x-5 items-center">
       <div className="left-img w-full ">
-        <img src={require("../../assets/Gallery_Hero.png")} alt="" className="rounded-xl" />
+        <img src={require(`../../assets/${images[0]}`)} alt="" className="rounded-xl" />
       </div>
       <div className="images-assets w-full flex flex-col gap-y-5">
         <div className="top w-full flex flex-row gap-x-5">
-          <figure>
-            <img src={require("../../assets/Gallery_0.png")} alt="" className="rounded-2xl" />
-          </figure>
-          <figure>
-            <img src={require("../../assets/Gallery_1.png")} alt="" className="rounded-2xl" />
-          </figure>
+          {images.slice(1, 3).map((image, index) => (
+            <figure key={index}>
+              <img src={require(`../../assets/${image}`)} alt="" className="rounded-2xl" />
+            </figure>
+          ))}
         </div>
         <div className="bottom w-full flex flex-row gap-x-5">
-          <figure>
-            <img src={require("../../assets/Gallery_2.png")} alt="" className="rounded-2xl" />
-          </figure>
-          <figure>
-            <img src={require("../../assets/Gallery_3.png")} alt="" className="rounded-2xl" />
-          </figure>
+          {images.slice(3).map((image, index) => (
+            <figure key={index}>
+              <img src={require(`../../assets/${image}`)} alt="" className="rounded-2xl" />
+            </figure>
+          ))}
         </div>
       </div>
     </section>

@@ -5,7 +5,8 @@ import { useState } from "react";
 import { CircularProgress } from "@mui/material";
 import { Link } from "react-router-dom";
 import Search_Bar from "./Search_Bar";
-
+import { data } from "../Debug/data";
+import ReadMore from "../../components/ui/Readmore";
 const List = () => {
   const [rawData, setRawData] = useState(null);
   const [list, setList] = useState(null);
@@ -61,13 +62,13 @@ const List = () => {
               <CircularProgress />
             </div>
           ) : (
-            list.map((key) => {
+            list.map((key, index) => {
               return (
                 <li key={key.id}>
                   <div id={key.id} className="ticket px-6 py-4 shadow-lg  flex flex-col md:flex-row rounded-xl gap-x-5">
                     <div className="thumbnail">
                       <figure>
-                        <img src={key.image} alt="kampung warna warni" className="bg-zinc-200 text-center rounded-xl w-52 h-56" />
+                        <img src={key.image} alt="kampung warna warni" className="bg-zinc-200 text-center object-cover rounded-xl w-52 h-56" />
                       </figure>
                     </div>
                     <div className="Desc flex flex-col w-3/4">
@@ -78,7 +79,9 @@ const List = () => {
                         </div>
                         <div className="location text-textDisabled">{key.location}</div>
                       </div>
-                      <div className="about hidden md:block text-textDisabled">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime unde explicabo vero architecto eligendi, labore quaerat possimus quod magnam! Quia.</div>
+                      <div className="about hidden md:block text-textDisabled">
+                        <ReadMore>{data[index].content}</ReadMore>
+                      </div>
                     </div>
                     <div className="prices flex md:flex-col flex-row md:w-1/6 w-full flex-wrap md:justify-end gap-y-4">
                       <div className="prices">

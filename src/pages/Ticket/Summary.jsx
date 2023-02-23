@@ -10,17 +10,17 @@ const Summary = () => {
   const prices = calulation === null ? " " : calulation.harga.find((element) => element != null);
   const UID = calulation === null ? " " : calulation.id.find((element) => element != null);
   const [isLoading, setLoading] = useState(false);
-  const user = localStorage.getItem("loginInfo");
   const postData = () => {
     setLoading(true);
     Axios.post("https://api-dewi-vtour.vercel.app/api/order/charge", {
       name: id.user.displayName === null ? id.user.email : id.user.displayName,
+      bank: calulation.bank.toString(),
       email: id.user.email,
       amount: prices,
       people: calulation.total.toString(),
-      tour: UID, 
+      tour: UID,
     })
-      .then((result) => {
+      .then(() => {
         localStorage.removeItem("Order Information");
         Swal.fire({
           icon: "success",
@@ -42,6 +42,7 @@ const Summary = () => {
         <div className="wrapper flex flex-col gap-y-3">
           <SummaryComps title="Lokasi" value={calulation.lokasi} />
           <SummaryComps title="kedatangan" value={calulation.time} />
+          <SummaryComps title="Jenis Bank" value={calulation.bank} />
           <SummaryComps title="harga tiket" value={"Rp " + prices.toLocaleString()} />
           <SummaryComps title="jumlah orang" value={calulation.total} />
           <div className="divider"></div>

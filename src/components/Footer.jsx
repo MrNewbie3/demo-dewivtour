@@ -9,7 +9,7 @@ function Footer() {
         <div className="socmed flex flex-col gap-y-8 md:flex-row gap-x-8">
           <p className="text-2xl text-white font-semibold">Hubungi Kami</p>
           <div className="logos flex flex-row gap-x-5">
-            <a href="https://www.instagram.com/dewivtour/" target={"_blank"} rel="noreferrer">
+            <a href="https://www.instagram.com/vragiotour/" target={"_blank"} rel="noreferrer">
               <InstagramIcon className="text-white" sx={{ fontSize: 24 }} />
             </a>
             <a href="https://wa.me/6285106655664" target={"_blank"} rel="noreferrer">

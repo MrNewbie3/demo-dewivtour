@@ -2,19 +2,25 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import PersonOutlineRoundedIcon from "@mui/icons-material/PersonOutlineRounded";
 import AccessAlarmRounded from "@mui/icons-material/AccessAlarmRounded";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+import { useEffect, useState } from "react";
 
 function Content() {
+  const [getLogin, setGetLogin] = useState(null);
+  useEffect(() => {
+    setGetLogin(localStorage.getItem("loginInfo"));
+  }, []);
+
   return (
     <>
       <div className="title my-12 text-center text-3xl md:text-5xl font-bold capitalize mx-5">
-        <p className="">tengok budaya sekitar dengan</p>
+        <p className="">guide your virtual tourism with</p>
         <p className="text-blueButton mt-3 md:mt-7">VRagio</p>
       </div>
       <div className="image mx-8 ">
         <img src={require("../../assets/beranda_hero.jpg")} alt="Homepattern" className="my-10 rounded-full w-full h-20 md:h-96 object-cover" />
       </div>
       <div className="info-content my-16">
-        <Tabs focusTabOnClick={false} className={"shadow-3xl rounded-3xl lg:h-96 max-w-6xl px-14 py-6  box-border mx-6 md:mx-10 lg:mx-12 xl:mx-auto"}>
+        <Tabs focusTabOnClick={false} className={"shadow-3xl rounded-3xl max-w-6xl px-14 py-6  box-border mx-6 md:mx-10 lg:mx-12 xl:mx-auto"}>
           <TabList className={"flex justify-center my-3 rounded-full items-center"}>
             <Tab selectedClassName="bg-[#3E5CB8] text-[#ffffff]" className={"btn text-textDisabled bg-buttonDisabled hover:bg-blueButton hover:text-gray-50 border-none rounded-full px-6 font-semibold text-sm md:text-base mx-2"}>
               Tiket Masuk
@@ -57,9 +63,13 @@ function Content() {
               </div>
             </div>
             <div className="bottom-button flex justify-center sm:justify-end mt-24 ">
-              <button disabled className="btn rounded-full border-none font-semibold text-base">
-                Pesan Sekarang
-              </button>
+              {getLogin === null ? (
+                <button disabled className="btn rounded-full border-none font-semibold text-base">
+                  Pesan Sekarang
+                </button>
+              ) : (
+                <button className="btn rounded-full bg-blueButton border-none font-semibold text-base">Pesan Sekarang</button>
+              )}
             </div>
           </TabPanel>
           <TabPanel>

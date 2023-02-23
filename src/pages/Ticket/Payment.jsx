@@ -95,6 +95,7 @@ const Payment = () => {
                                 }
                               />
                               <SummaryComps title="Akun Virtual" value={data.response_midtrans.va_numbers[0].va_number} />
+                              <SummaryComps title="Nama Bank" value={data.bank} />
                               <SummaryComps title="Harga" value={"Rp " + (data.gross_amount / data.people).toLocaleString()} />
                               <SummaryComps title="jumlah orang" value={data.people} />
                               <SummaryComps title="tanggal order" value={dateConverter(data.createdAt)} />

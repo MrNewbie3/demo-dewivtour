@@ -7,7 +7,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const Order = () => {
-  const [location, setlocation] = useState({ lokasi: null, time: null, total: null, harga: null, id: null });
+  const [location, setlocation] = useState({ lokasi: null, time: null, total: null, harga: null, id: null, bank: null });
+  const bankData = ["bca", "bni", "briva", "permata bank", "atm bersama", "alto", "prima"];
   const [data, setData] = useState();
   const [renderStatus, setRenderStatus] = useState(false);
   useEffect(() => {
@@ -52,7 +53,7 @@ const Order = () => {
   };
 
   const reset = () => {
-    setlocation({ lokasi: null, time: null, total: null });
+    setlocation({ lokasi: null, time: null, total: null, bank: null });
   };
   const handleSubmit = () => {
     console.log(location);
@@ -118,6 +119,29 @@ const Order = () => {
                 value={location.total === null ? "" : location.total}
                 placeholder="Masukkan Jumlah Pengunjung"
               />
+            </div>
+          </div>
+        </div>
+        <div className="people flex flex-row items-center gap-x-8 my-3">
+          <div className="hidden md:block">
+            <PersonOutlineRoundedIcon className="text-blueButton  bg-blueMain p-2 box-content rounded-full" sx={{ fontSize: 32 }} />
+          </div>
+          <div className="text font-medium text-textDisabled text-sm sm:text-base">
+            <div className="dropdown">
+              <label tabIndex={0} className="m-1 uppercase">
+                {location.bank === null ? "Pilih bank pembayaran" : location.bank}
+              </label>
+              <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                {bankData.map((res, index) => {
+                  return (
+                    <li key={index}>
+                      <a onClick={handleChange} name="bank" id={res} className="uppercase">
+                        {res}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
         </div>

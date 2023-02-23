@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { jsonData, signOutMethod } from "../config/Auth/auth";
 
 function Navbar() {
@@ -20,36 +20,36 @@ function Navbar() {
           </label>
           <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
-              <a href="/">Beranda </a>
+              <Link to="/">Beranda </Link>
             </li>
             <li tabIndex={0}>
-              <a href="/destination">Destinasi</a>
+              <Link to="/destination">Destinasi</Link>
             </li>
             <li>
-              <a href="/ticket">Tiket</a>
+              <Link to="/ticket">Tiket</Link>
             </li>
             <li>
-              <a href="/vtour">VTour</a>
+              <Link to="/vtour">VTour</Link>
             </li>
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl font-semibold ">
-          <img src={require("../assets/VRAGIO_Logo With Text.png")} alt="" className="w-20" />
+          <img src={require("../assets/VRAGIO_Logo With Text.png")} alt="" className="w-16" />
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a href="/">Beranda </a>
+            <Link to="/">Beranda </Link>
           </li>
           <li tabIndex={0}>
-            <a href="/destination">Destinasi</a>
+            <Link to="/destination">Destinasi</Link>
           </li>
           <li>
-            <a href="/ticket">Tiket</a>
+            <Link to="/ticket">Tiket</Link>
           </li>
           <li>
-            <a href="/vtour">VTour</a>
+            <Link to="/vtour">VTour</Link>
           </li>
         </ul>
       </div>
