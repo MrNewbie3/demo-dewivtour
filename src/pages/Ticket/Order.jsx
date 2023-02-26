@@ -8,7 +8,7 @@ import axios from "axios";
 
 const Order = () => {
   const [location, setlocation] = useState({ lokasi: null, time: null, total: null, harga: null, id: null, bank: null });
-  const bankData = ["bca", "bni", "briva", "permata bank", "atm bersama", "alto", "prima"];
+  const bankData = ["bca", "bni", "permata bank"];
   const [data, setData] = useState();
   const [renderStatus, setRenderStatus] = useState(false);
   useEffect(() => {

@@ -2,7 +2,6 @@
 import SummaryComps from "../../components/ui/Summary";
 import Axios from "axios";
 import { useState } from "react";
-import { useEffect } from "react";
 import Swal from "sweetalert2";
 const Summary = () => {
   const calulation = JSON.parse(localStorage.getItem("Order Information"));
